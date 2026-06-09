@@ -93,8 +93,10 @@ class AgentClient:
                         break
             
             return assistant_message
-        except Exception:
+        except Exception as e:
             logger.exception("Error communicating with agent")
+            if os.getenv("DEBUG", "false").lower() == "true":
+                return f"An internal error occurred while communicating with the agent: {e}"
             return "An internal error occurred while communicating with the agent."
     
     def reset_conversation(self):

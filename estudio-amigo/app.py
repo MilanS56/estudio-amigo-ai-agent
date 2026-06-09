@@ -6,10 +6,14 @@ for interacting with the Computing History agent.
 """
 
 import os
+import logging
 from flask import Flask, render_template, request, jsonify
 import markdown
 import bleach
 from agent_client import AgentClient
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -76,8 +80,9 @@ def index():
 def chat():
     """Handle chat messages from the user."""
     if not agent:
+        logger.error("Agent client not initialized. Check Render environment variables.")
         return jsonify({
-            'error': 'Agent client not initialized. Check your .env configuration.'
+            'error': 'Agent client not initialized. Check your service configuration.'
         }), 500
     
     data = request.json

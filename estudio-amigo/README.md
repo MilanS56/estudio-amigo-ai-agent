@@ -42,6 +42,13 @@ AGENT_ENDPOINT=https://<your-foundry-agent-endpoint>/responses
 
 Notes
 - The app reads `AGENT_ENDPOINT` from environment variables. `agent_client.py` uses `DefaultAzureCredential` to obtain tokens — you can sign in locally with `az login` or set the service principal env vars.
+- On Render, the `.env` file is not used. You must configure environment variables in the Render dashboard.
+- Required Render environment variables:
+  - `AGENT_ENDPOINT`
+  - `AZURE_CLIENT_ID`
+  - `AZURE_TENANT_ID`
+  - `AZURE_CLIENT_SECRET`
+- If you need debugging, set `DEBUG=true` in Render temporarily. The app will then return the agent exception message in the `/chat` response.
 - The folder was renamed to `estudio-amigo` from `computer-history-client`. If you require the original folder path for compatibility, copy `estudio-amigo/agent_client.py` back to `computer-history-client/agent_client.py`.
 - Do not commit `.env` or the virtual environment — `.gitignore` is configured to ignore them.
 
