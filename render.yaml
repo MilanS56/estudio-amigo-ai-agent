@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: estudio-amigo
+    env: python
+    plan: starter
+    branch: main
+    buildCommand: pip install -r estudio-amigo/requirements.txt
+    startCommand: gunicorn --chdir estudio-amigo app:app
+    autoDeploy: true
