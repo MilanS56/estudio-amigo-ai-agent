@@ -1,9 +1,22 @@
-@"
+# Virtual environment
 .venv/
+
+# Python cache and compiled files
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
+
+# Distribution / packaging
 *.egg-info/
+
+# Environment variables and secrets
 .env
+.env.*
+
+# Editor and OS files
 .DS_Store
-"@ | Out-File .gitignore
+.vscode/
+
+# Logs and databases
+*.log
+*.sqlite3
