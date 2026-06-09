@@ -1,4 +1,4 @@
-# Estudio Amigo — Computing History Agent
+# Estudio Amigo — AI academic mentor for Sciences, Mathematics, Psychology, Environment, and CBSE Commerce (Classes 11-12).
 
 A simple Flask web client for interacting with a Microsoft Foundry / Azure-hosted agent that provides computing history information.
 
