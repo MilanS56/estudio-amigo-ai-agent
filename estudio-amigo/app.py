@@ -5,6 +5,7 @@ This is the main Flask application that provides a web interface
 for interacting with the Computing History agent.
 """
 
+import os
 from flask import Flask, render_template, request, jsonify
 import markdown
 import bleach
